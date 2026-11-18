@@ -1,0 +1,6 @@
+{
+  "name": "RevAgent - AI Revenue & Business Intelligence Agent",
+  "description": "Advanced AI-powered Revenue Agent and Business Intelligence platform supporting Persian, English, and Bahasa Indonesia with multi-language RTL/LTR switching, deal forecasting, lead scoring, and automated AI workflows.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

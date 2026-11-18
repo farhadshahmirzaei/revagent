@@ -1,0 +1,108 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Strict per-language font isolation */
+  html[lang="fa"] body,
+  html[lang="fa"] input,
+  html[lang="fa"] textarea,
+  html[lang="fa"] select,
+  html[lang="fa"] button,
+  html[lang="fa"] h1,
+  html[lang="fa"] h2,
+  html[lang="fa"] h3,
+  html[lang="fa"] h4 {
+    font-family: 'Vazirmatn', system-ui, sans-serif;
+  }
+
+  html[lang="en"] body,
+  html[lang="id"] body,
+  html[lang="en"] input,
+  html[lang="id"] input,
+  html[lang="en"] textarea,
+  html[lang="id"] textarea,
+  html[lang="en"] select,
+  html[lang="id"] select,
+  html[lang="en"] button,
+  html[lang="id"] button {
+    font-family: 'DM Sans', system-ui, sans-serif;
+  }
+
+  html[lang="en"] h1,
+  html[lang="en"] h2,
+  html[lang="en"] h3,
+  html[lang="en"] h4,
+  html[lang="id"] h1,
+  html[lang="id"] h2,
+  html[lang="id"] h3,
+  html[lang="id"] h4 {
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  }
+
+  /* Optical legibility in dark mode */
+  .dark body {
+    letter-spacing: 0.005em;
+  }
+  html[lang="fa"].dark body {
+    letter-spacing: 0;
+  }
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+.font-mono-num {
+  font-family: 'IBM Plex Mono', monospace;
+  font-variant-numeric: tabular-nums;
+}
+
+html[lang="fa"] .font-mono-num {
+  font-family: 'Vazirmatn', monospace;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Smooth panel transitions */
+@keyframes panelEnter {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-panel {
+  animation: panelEnter 180ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-panel {
+    animation: none;
+  }
+  * {
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Clean scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(100, 116, 139, 0.35);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(99, 102, 241, 0.6);
+}
